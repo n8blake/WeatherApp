@@ -1,7 +1,7 @@
 @import "../../bootstrap/scss/bootstrap";
 
 body {
-	background: #f5f5f5;
+	/*background: #f5f5f5;*/
 }
 
 main {
@@ -11,6 +11,16 @@ main {
 footer {
   margin-bottom: 50pt;
 }
+
 #history-list-container{
   width: 100%;
+}
+
+.city-list-item {
+	cursor: pointer;
+}
+
+.forecast-header {
+	font-size: 10pt;
+	font-weight: 300;
 }

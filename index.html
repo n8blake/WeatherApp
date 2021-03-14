@@ -6,11 +6,132 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Weather App</title>
 		<link rel="stylesheet" href="./assets/styles.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+		<script type="text/javascript" src="./assets/setup.js"></script>
 	</head>
 	<body>
-		<main class="container">
-			<h1>Weather App</h1>
+		<div class="container-fluid">
+		<div class="row">
+		<aside class="col-md-4">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="City" aria-label="City" aria-describedby="button-got" name="city-input" id="city-input" >
+				<button class="btn btn-outline-secondary" type="button" id="getCityBtn">GO</button>
+			</div>
+
+			<ul id="city-list-container" class="list-group-flush">
+				<li class="list-group-item d-flex justify-content-between">
+					<span>Everett</span>
+					<span>
+						<i class="bi bi-cloud-rain"></i> 
+						<span >62</span>
+					</span>
+				</li>
+				<li class="list-group-item d-flex justify-content-between">
+					<span>San Francisco</span>
+					<span><i class="bi bi-cloud-rain"></i> <span>50</span></span>
+				</li>
+				<li class="list-group-item d-flex justify-content-center">
+					<i class="bi bi-caret-down-fill"></i>
+				</li>
+			</ul>
+		</aside>
+
+		<main class="col-md-8">
+		<h1 id="active-city-title">Seattle</h1>
+			<small id="active-city-date">Friday 12, March 2021 2:30 p.m.</small>
+			<h3 id="active-city-weather-icon"><i class="bi bi-cloud-rain"></i></h3>
+			<h3 id="current-city-current-temp">64</h3>
+		<div class="d-flex justify-content-between">
+			<span>High: 68</span>
+			<span>Low: 50</span>
+			<span>Humidity: 50%</span>
+			<span class="badge rounded-pill bg-success">UVI: 1</span>
+			<span class="badge rounded-pill bg-success">AQI: 46</span>
+		</div>
+		<hr>
+		<div class="d-flex justify-content-between">
+		<!--Monday-->
+		<div class="card">
+			<div class="card-header">MONDAY</div>
+			<div class="card-body">
+			<h4><i class="bi bi-cloud-rain"></i></h4>
+			<div class="d-flex justify-content-center">
+				<span><strong>68</strong></span> 
+				<span class="px-1"> / </span>
+				<span class="text-secondary"><small>50</small></span>
+			</div>
+			<div class="d-flex justify-content-between p-2">
+				<small>Humidity: 50%</small>
+			</div>
+			</div>
+		</div>
+		<!--Tuesday-->
+		<div class="card">
+			<div class="card-header">TUESDAY</div>
+			<div class="card-body">
+			<h4><i class="bi bi-cloud-rain"></i></h4>
+			<div class="d-flex justify-content-center">
+				<span><strong>68</strong></span> 
+				<span class="px-1"> / </span>
+				<span class="text-secondary"><small>50</small></span>
+			</div>
+			<div class="d-flex justify-content-between p-2">
+				<small>Humidity: 50%</small>
+			</div>
+			</div>
+		</div>
+		<!--Wednesday-->
+		<div class="card">
+			<div class="card-header forecast-header">WEDNESDAY</div>
+			<div class="card-body">
+			<h4><i class="bi bi-cloud-rain"></i></h4>
+			<div class="d-flex justify-content-center">
+				<span><strong>68</strong></span> 
+				<span class="px-1"> / </span>
+				<span class="text-secondary"><small>50</small></span>
+			</div>
+			<div class="d-flex justify-content-between p-2">
+				<small>Humidity: 50%</small>
+			</div>
+			</div>
+		</div>
+		<!--Thursday-->
+		<div class="card">
+			<div class="card-header">Thursday</div>
+			<div class="card-body">
+			<h4><i class="bi bi-cloud-rain"></i></h4>
+			<div class="d-flex justify-content-center">
+				<span><strong>68</strong></span> 
+				<span class="px-1"> / </span>
+				<span class="text-secondary"><small>50</small></span>
+			</div>
+			<div class="d-flex justify-content-between p-2">
+				<small>Humidity: 50%</small>
+			</div>
+			</div>
+		</div>
+		<!--Friday-->
+		<div class="card">
+			<div class="card-header">Friday</div>
+			<div class="card-body">
+			<h4><i class="bi bi-cloud-rain"></i></h4>
+			<div class="d-flex justify-content-center">
+				<span><strong>68</strong></span> 
+				<span class="px-1"> / </span>
+				<span class="text-secondary"><small>50</small></span>
+			</div>
+			<div class="d-flex justify-content-between p-2">
+				<small>Humidity: 50%</small>
+			</div>
+			</div>
+		</div>
+		</div>
 		</main>
+		<footer>
+
+		</footer>
+		</div>
+		</div>		
 		<script type="text/javascript" src="./assets/index.js"></script>
 	</body>
 </html>

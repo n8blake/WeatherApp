@@ -10627,7 +10627,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  background: #f5f5f5;
+  /*background: #f5f5f5;*/
 }
 
 main {
@@ -10640,6 +10640,15 @@ footer {
 
 #history-list-container {
   width: 100%;
+}
+
+.city-list-item {
+  cursor: pointer;
+}
+
+.forecast-header {
+  font-size: 10pt;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=styles.css.map */
