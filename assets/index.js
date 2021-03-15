@@ -45,11 +45,11 @@ let activeCity = null;
 let activyCityForecastData = null;
 
 const setActiveCity = async (cityData) => {
-	//console.log(cityData);
 	activeCity = cityData;
 	document.querySelector("#active-city-title").textContent = cityData.name;
 	document.querySelector("#current-city-current-temp").textContent = temperatureString(cityData.main.temp);
 	document.querySelector("#active-city-weather-icon").innerHTML = '<img src="http://openweathermap.org/img/wn/' + cityData.weather[0].icon + '@2x.png">';	
+	document.querySelector("#active-city-weather-condtion").textContent = cityData.weather[0].description;
 	document.querySelector("#active-city-date").textContent = longDateString(dateObject(cityData.dt));
 	document.querySelector("#active-city-high").textContent = "High: " + temperatureString(cityData.main.temp_max);
 	document.querySelector("#active-city-low").textContent = "Low: " + temperatureString(cityData.main.temp_min);
@@ -184,12 +184,9 @@ const initCities = async () => {
 }
 
 const makeDayCard = (dayData) => {
-	//console.log(dayData);
 	const col = document.createElement('div');
 	col.classList.add('col-6');
 	col.classList.add('col-md-3')
-	//col.classList.add('col-lg-3');
-	//col.classList.add('')
 	const card = document.createElement('div');
 	card.classList.add('card');
 	card.classList.add('forecast-card');
@@ -201,7 +198,6 @@ const makeDayCard = (dayData) => {
 	const cardBody = document.createElement('div');
 	const icon = document.createElement('h4');
 	icon.appendChild(getWeatherIcon(dayData.weather[0].icon, true));
-	//console.log(icon);
 	card.appendChild(icon);
 	const tempContainer = document.createElement('div');
 	const high = document.createElement('span');
