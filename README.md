@@ -4,7 +4,7 @@ A simple app to display the weather. Simply search for a city by typing it into 
 
 ## In Action 
 
-You can see this project live at: <a href="https://n8blake.github.io/day-time/">https://n8blake.github.io/day-time/</a>
+You can see this project live at: <a href="https://n8blake.github.io/WeatherApp/">https://n8blake.github.io/WeatherApp/</a>
 
 
 <img src="weather_app_screen.png" alt="Weather App Screen Shot">
