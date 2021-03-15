@@ -7,128 +7,55 @@
 		<title>Weather App</title>
 		<link rel="stylesheet" href="./assets/styles.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./assets/setup.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
 		<div class="row">
-		<aside class="col-md-4">
+		<aside class="col-md-4 mt-4 p-4">
 			<div class="input-group">
 				<input type="text" class="form-control" placeholder="City" aria-label="City" aria-describedby="button-got" name="city-input" id="city-input" >
 				<button class="btn btn-outline-secondary" type="button" id="getCityBtn">GO</button>
 			</div>
-
-			<ul id="city-list-container" class="list-group-flush">
-				<li class="list-group-item d-flex justify-content-between">
-					<span>Everett</span>
-					<span>
-						<i class="bi bi-cloud-rain"></i> 
-						<span >62</span>
-					</span>
-				</li>
-				<li class="list-group-item d-flex justify-content-between">
-					<span>San Francisco</span>
-					<span><i class="bi bi-cloud-rain"></i> <span>50</span></span>
-				</li>
-				<li class="list-group-item d-flex justify-content-center">
-					<i class="bi bi-caret-down-fill"></i>
-				</li>
+			<div class="alert alert-warning alert-dismissible fade show mt-2" role="alert" id="invalid-city-error">
+				<strong>Invalid City Name</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="dismissAlert()"></button>
+			</div>
+			<div class="d-flex justify-content-center">
+				<button class="btn" id="collapse-toggle-btn" role="button" data-bs-toggle="collapse" data-bs-target="#city-list-container" aria-expanded="true" aria-controls="city-list-container"><i id="collapse-caret-icon" class="bi bi-caret-down-fill"></i></button>
+			</div>
+			<ul id="city-list-container" class="list-group-flush collapse">
 			</ul>
+			
+
 		</aside>
 
-		<main class="col-md-8">
-		<h1 id="active-city-title">Seattle</h1>
-			<small id="active-city-date">Friday 12, March 2021 2:30 p.m.</small>
-			<h3 id="active-city-weather-icon"><i class="bi bi-cloud-rain"></i></h3>
-			<h3 id="current-city-current-temp">64</h3>
-		<div class="d-flex justify-content-between">
-			<span>High: 68</span>
-			<span>Low: 50</span>
-			<span>Humidity: 50%</span>
-			<span class="badge rounded-pill bg-success">UVI: 1</span>
-			<span class="badge rounded-pill bg-success">AQI: 46</span>
-		</div>
-		<hr>
-		<div class="d-flex justify-content-between">
-		<!--Monday-->
-		<div class="card">
-			<div class="card-header">MONDAY</div>
-			<div class="card-body">
-			<h4><i class="bi bi-cloud-rain"></i></h4>
-			<div class="d-flex justify-content-center">
-				<span><strong>68</strong></span> 
-				<span class="px-1"> / </span>
-				<span class="text-secondary"><small>50</small></span>
+		<main class="col-md-8 p-4">
+			<h1 id="active-city-title"> </h1>
+			<small id="active-city-date"> </small>
+			<h3 id="active-city-weather-icon"></h3>
+			<h3 id="current-city-current-temp"> </h3>
+			<div class="p-2 d-flex flex-column flex-md-row justify-content-between">
+				<span id="active-city-high" class="my-2"> </span>
+				<span id="active-city-low" class="my-2"> </span>
+				<span id="active-city-humidity" class="my-2"> </span>
+				<span id="active-city-uvi" class="badge rounded-pill my-2 p-2"> </span>
 			</div>
-			<div class="d-flex justify-content-between p-2">
-				<small>Humidity: 50%</small>
-			</div>
-			</div>
-		</div>
-		<!--Tuesday-->
-		<div class="card">
-			<div class="card-header">TUESDAY</div>
-			<div class="card-body">
-			<h4><i class="bi bi-cloud-rain"></i></h4>
-			<div class="d-flex justify-content-center">
-				<span><strong>68</strong></span> 
-				<span class="px-1"> / </span>
-				<span class="text-secondary"><small>50</small></span>
-			</div>
-			<div class="d-flex justify-content-between p-2">
-				<small>Humidity: 50%</small>
-			</div>
-			</div>
-		</div>
-		<!--Wednesday-->
-		<div class="card">
-			<div class="card-header forecast-header">WEDNESDAY</div>
-			<div class="card-body">
-			<h4><i class="bi bi-cloud-rain"></i></h4>
-			<div class="d-flex justify-content-center">
-				<span><strong>68</strong></span> 
-				<span class="px-1"> / </span>
-				<span class="text-secondary"><small>50</small></span>
-			</div>
-			<div class="d-flex justify-content-between p-2">
-				<small>Humidity: 50%</small>
-			</div>
-			</div>
-		</div>
-		<!--Thursday-->
-		<div class="card">
-			<div class="card-header">Thursday</div>
-			<div class="card-body">
-			<h4><i class="bi bi-cloud-rain"></i></h4>
-			<div class="d-flex justify-content-center">
-				<span><strong>68</strong></span> 
-				<span class="px-1"> / </span>
-				<span class="text-secondary"><small>50</small></span>
-			</div>
-			<div class="d-flex justify-content-between p-2">
-				<small>Humidity: 50%</small>
-			</div>
-			</div>
-		</div>
-		<!--Friday-->
-		<div class="card">
-			<div class="card-header">Friday</div>
-			<div class="card-body">
-			<h4><i class="bi bi-cloud-rain"></i></h4>
-			<div class="d-flex justify-content-center">
-				<span><strong>68</strong></span> 
-				<span class="px-1"> / </span>
-				<span class="text-secondary"><small>50</small></span>
-			</div>
-			<div class="d-flex justify-content-between p-2">
-				<small>Humidity: 50%</small>
-			</div>
-			</div>
-		</div>
-		</div>
+			<hr class="my-4">
+			<section class="conatiner">
+				<div id="forecast-container" class="row">
+				
+				</div>
+				<div class="d-flex justify-content-center">
+					<button class="btn btn-sm btn-outline-secondary" onclick="removeActiveCityFromCitiesList()">Remove from recent search list</button>
+				</div>
+			</section>
 		</main>
-		<footer>
-
+		<footer class="conatiner d-flex justify-content-center">
+			<p class="lead p-4">© 2021 BLAKEink. | n8blake </p>
+			<p class="lead p-4">Weather data provided by <a class="text-secondary text-decoration-none" href="https://openweathermap.org/">OpenWeather</a></p>
 		</footer>
 		</div>
 		</div>		
